@@ -41,7 +41,7 @@ public class JhipsterSampleApplicationApp {
     ParseTree tree = parser.file();
 
     for (AISDataPojo aisDataPojo : aisDataBasePojoListener.getAisDataPojos()) {
-      System.out.println(aisDataPojo);
+      log.info(aisDataPojo.toString());
     }
   }
 }
