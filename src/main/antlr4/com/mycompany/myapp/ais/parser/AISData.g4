@@ -2,7 +2,7 @@ grammar AISData;
 
 file:  header row* EOF;
 
-header: row;
+header: TEXT (',' TEXT)* '\r'? '\n';
 
 row:
   mmsi ','
