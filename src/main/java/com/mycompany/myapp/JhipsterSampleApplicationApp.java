@@ -29,10 +29,6 @@ public class JhipsterSampleApplicationApp {
   public static void main(String[] args) throws IOException {
     Environment env = SpringApplication.run(JhipsterSampleApplicationApp.class, args).getEnvironment();
 
-    if (log.isInfoEnabled()) {
-      log.info(ApplicationStartupTraces.of(env));
-    }
-
     File intputFile = new ClassPathResource("ais.csv").getFile();
     InputStream is = new FileInputStream(intputFile);
 

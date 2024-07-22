@@ -1,66 +1,51 @@
 package com.mycompany.myapp.ais;
 
-public class AISDataPojo {
-  private String MMSI;
-  private String BaseDateTime;
-  private Double LAT;
-  private Double LON;
-  private Float SOG;
-  private Float COG;
-  private Float Heading;
-  private String VesselName;
-  private String IMO;
-  private String CallSign;
-  private Short VesselType;
-  private Short Status;
-  private Short Length;
-  private Short Width;
-  private Float Draft;
-  private String Cargo;
-  private String TransceiverClass;
+import jakarta.annotation.Nullable;
+import org.immutables.value.Value;
 
-  public AISDataPojo(String MMSI, String BaseDateTime, Double LAT, Double LON, Float SOG, Float COG,
-                     Float Heading, String VesselName, String IMO, String CallSign, Short VesselType,
-                     Short Status, Short Length, Short Width, Float Draft, String Cargo, String TransceiverClass) {
-    this.MMSI = MMSI;
-    this.BaseDateTime = BaseDateTime;
-    this.LAT = LAT;
-    this.LON = LON;
-    this.SOG = SOG;
-    this.COG = COG;
-    this.Heading = Heading;
-    this.VesselName = VesselName;
-    this.IMO = IMO;
-    this.CallSign = CallSign;
-    this.VesselType = VesselType;
-    this.Status = Status;
-    this.Length = Length;
-    this.Width = Width;
-    this.Draft = Draft;
-    this.Cargo = Cargo;
-    this.TransceiverClass = TransceiverClass;
-  }
+import java.time.LocalDateTime;
+import java.util.Optional;
+
+@Value.Immutable
+public abstract class AISDataPojo {
+  public abstract Integer mmsi();
+  public abstract LocalDateTime dateTime();
+  public abstract Double lat();
+  public abstract Double lon();
+  public abstract Float sog();
+  public abstract Float cog();
+  public abstract Float heading();
+  public abstract String vesselName();
+  @Nullable public abstract String imo();
+  @Nullable public abstract String callSign();
+  @Nullable public abstract Short vesselType();
+  @Nullable public abstract Short status();
+  @Nullable public abstract Short length();
+  @Nullable public abstract Short width();
+  @Nullable public abstract Float draft();
+  @Nullable public abstract String cargo();
+  @Nullable public abstract String transceiverClass();
 
   @Override
   public String toString() {
     return "AISDataPojo{" +
-      "MMSI='" + MMSI + '\'' +
-      ", BaseDateTime='" + BaseDateTime + '\'' +
-      ", LAT=" + LAT +
-      ", LON=" + LON +
-      ", SOG=" + SOG +
-      ", COG=" + COG +
-      ", Heading=" + Heading +
-      ", VesselName='" + VesselName + '\'' +
-      ", IMO='" + IMO + '\'' +
-      ", CallSign='" + CallSign + '\'' +
-      ", VesselType=" + VesselType +
-      ", Status=" + Status +
-      ", Length=" + Length +
-      ", Width=" + Width +
-      ", Draft=" + Draft +
-      ", Cargo='" + Cargo + '\'' +
-      ", TransceiverClass='" + TransceiverClass + '\'' +
+      "MMSI=" + mmsi() +
+      ", DateTime='" + dateTime() + '\'' +
+      ", LAT=" + lat() +
+      ", LON=" + lon() +
+      ", SOG=" + sog() +
+      ", COG=" + cog() +
+      ", Heading=" + heading() +
+      ", VesselName='" + vesselName() + '\'' +
+      ", IMO='" + imo() + '\'' +
+      ", CallSign='" + callSign() + '\'' +
+      ", VesselType=" + vesselType() +
+      ", Status=" + status() +
+      ", Length=" + length() +
+      ", Width=" + width() +
+      ", Draft=" + draft() +
+      ", Cargo='" + cargo() + '\'' +
+      ", TransceiverClass='" + transceiverClass() + '\'' +
       '}';
   }
 }
