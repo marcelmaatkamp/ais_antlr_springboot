@@ -3,6 +3,7 @@ package com.mycompany.myapp;
 import com.mycompany.myapp.ais.AISDataBasePojoListener;
 import com.mycompany.myapp.ais.AISDataPojo;
 import com.mycompany.myapp.ais.parser.AISDataLexer;
+import com.mycompany.myapp.ais.parser.AISDataParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -27,7 +28,7 @@ public class JhipsterSampleApplicationApp {
   private static final Logger log = LoggerFactory.getLogger(JhipsterSampleApplicationApp.class);
 
   public static void main(String[] args) throws IOException {
-    Environment env = SpringApplication.run(JhipsterSampleApplicationApp.class, args).getEnvironment();
+    Environment environment = SpringApplication.run(JhipsterSampleApplicationApp.class, args).getEnvironment();
 
     File intputFile = new ClassPathResource("ais.csv").getFile();
     InputStream is = new FileInputStream(intputFile);
@@ -35,7 +36,7 @@ public class JhipsterSampleApplicationApp {
     CharStream input = CharStreams.fromStream(is);
     AISDataLexer lexer = new AISDataLexer(input);
     CommonTokenStream tokens = new CommonTokenStream(lexer);
-    var parser = new com.mycompany.myapp.ais.parser.AISDataParser(tokens);
+    AISDataParser parser = new AISDataParser(tokens);
     AISDataBasePojoListener aisDataBasePojoListener = new AISDataBasePojoListener();
     parser.addParseListener(aisDataBasePojoListener);
     ParseTree tree = parser.file();
