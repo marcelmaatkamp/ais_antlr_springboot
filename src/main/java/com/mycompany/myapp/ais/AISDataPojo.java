@@ -13,15 +13,15 @@ public class AISDataPojo {
   private String CallSign;
   private Short VesselType;
   private Short Status;
-  private Float Length;
-  private Float Width;
+  private Short Length;
+  private Short Width;
   private Float Draft;
   private String Cargo;
   private String TransceiverClass;
 
   public AISDataPojo(String MMSI, String BaseDateTime, Double LAT, Double LON, Float SOG, Float COG,
                      Float Heading, String VesselName, String IMO, String CallSign, Short VesselType,
-                     Short Status, Float Length, Float Width, Float Draft, String Cargo, String TransceiverClass) {
+                     Short Status, Short Length, Short Width, Float Draft, String Cargo, String TransceiverClass) {
     this.MMSI = MMSI;
     this.BaseDateTime = BaseDateTime;
     this.LAT = LAT;

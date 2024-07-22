@@ -13,7 +13,7 @@ row:
   cog ','
   heading ','
   vesselName ','
-  imo ','
+  imo? ','
   callSign? ','
   vesselType? ','
   status? ','
@@ -35,10 +35,10 @@ imo: TEXT;
 callSign: TEXT;
 vesselType: NUMBER;
 status: NUMBER;
-length: FLOAT;
-width: FLOAT;
+length: NUMBER;
+width: NUMBER;
 draft: FLOAT;
-cargo: TEXT;
+cargo: NUMBER;
 transceiverClass: LETTER;
 
 SIGN: '-';

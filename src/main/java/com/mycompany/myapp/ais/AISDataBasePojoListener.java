@@ -27,8 +27,8 @@ public class AISDataBasePojoListener extends AISDataBaseListener {
       (ctx.callSign() != null && !ctx.callSign().isEmpty() ? ctx.callSign().getText(): null),
       (ctx.vesselType() != null && !ctx.vesselType().isEmpty() ? Short.parseShort(ctx.vesselType().getText()): null),
       (ctx.status() != null && !ctx.status().getText().isEmpty() ? Short.parseShort(ctx.status().getText()): null),
-      (ctx.length() != null && !ctx.length().isEmpty() ? Float.parseFloat(ctx.length().getText()): null),
-      (ctx.width() != null && !ctx.width().isEmpty() ? Float.parseFloat(ctx.width().getText()): null),
+      (ctx.length() != null && !ctx.length().isEmpty() ? Short.parseShort(ctx.length().getText()): null),
+      (ctx.width() != null && !ctx.width().isEmpty() ? Short.parseShort(ctx.width().getText()): null),
       (ctx.draft() != null && !ctx.draft().isEmpty() ? Float.parseFloat(ctx.draft().getText()): null),
       (ctx.cargo() != null && !ctx.cargo().isEmpty() ? ctx.cargo().getText(): null),
       (ctx.transceiverClass() != null && !ctx.transceiverClass().isEmpty() ? ctx.transceiverClass().getText():null)
